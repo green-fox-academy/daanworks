@@ -15,6 +15,8 @@ public class BlogPost {
 
     public static void main(String[] args) {
 
+        Blog blog = new Blog();
+
         BlogPost post1 = new BlogPost(
                 "John Doe",
                 "Lorem Ipsum",
@@ -37,5 +39,12 @@ public class BlogPost {
                         " City offices, he told me that he wasn’t really into the whole organizer profile thing.",
                 "2017.03.28."
         );
+
+        blog.add(post1);
+        blog.add(post2);
+        blog.add(post3);
+
+
+
     }
 }

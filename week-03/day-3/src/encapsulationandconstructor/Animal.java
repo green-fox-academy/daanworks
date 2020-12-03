@@ -2,8 +2,8 @@ package encapsulationandconstructor;
 
 public class Animal {
 
-    int hunger = 50;
-    int thirst = 50;
+    public int hunger = 50;
+    public int thirst = 50;
 
     public Animal() {}
 
@@ -28,6 +28,12 @@ public class Animal {
         System.out.println(tiger.hunger);
         tiger.drink();
         System.out.println(tiger.thirst);
+
+        Farm farm = new Farm();
+
+        farm.breed();
+
+        System.out.println(farm.animalList.get(0).hunger);
 
     }
 
