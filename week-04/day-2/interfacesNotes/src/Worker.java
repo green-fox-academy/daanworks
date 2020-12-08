@@ -1,7 +1,7 @@
 public class Worker extends HoneyBee implements Stinger{
 
     public void gatherPollen() {
-        System.out.println("Gathering pollen....");
+        System.out.println("Gathering pollen...");
     }
 
     @Override

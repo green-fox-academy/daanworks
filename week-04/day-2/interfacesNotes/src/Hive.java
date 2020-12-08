@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hive {
+
     private final List<HoneyBee> honeyBees;
 
     public Hive() {
