@@ -26,15 +26,16 @@ public class CountLettersTest {
         expected.put('m', 1);
         expected.put('o', 2);
 
-        Map<Character, Integer> actual = CountLetters.createMap("hollymolly");
+        Map<Character, Integer> actual = countLetters.createMap("hollymolly");
 
         assertEquals(expected, actual);
 
     }
 
-    @Test(expected=NullPointerException.class)
-    public void test_null_input() {
-        Map<Character, Integer> actual;
+    @Test(expected = NullPointerException.class)
+    public void null_input() {
+        String nullString = null;
+        countLetters.createMap(nullString);
     }
 
 }

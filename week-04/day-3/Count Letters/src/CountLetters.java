@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CountLetters {
 
-    public static Map<Character, Integer> createMap(String inputString) {
+    public Map<Character, Integer> createMap(String inputString) {
 
         Map<Character, Integer> map = new HashMap<>();
         String lowCaseString = inputString.toLowerCase();
