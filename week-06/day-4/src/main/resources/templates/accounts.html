@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Accounts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Animal type</th>
+            <th>Balance</th>
+            <th>Is King?</th>
+        </tr>
+        <tr th:class="${account.getStyle}" th:each="account: ${accounts}">
+            <td th:text="${accountStat.index}">
+            <td th:text="${account.name}">
+            <td th:text="${account.animalType}">
+            <td th:text="${account.getFormattedBalance()}">
+            <td th:text="${account.getIsKing()}">
+        </tr>
+    </table>
+</body>
+</html>
