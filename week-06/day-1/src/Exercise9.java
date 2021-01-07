@@ -9,6 +9,6 @@ public class Exercise9 {
                 .mapToObj(e -> (char) e)
                 .collect(Collectors.toList());
         HashMap<Character, Integer> characterFrequencies = new HashMap<>();
-        
+        // ...
     }
 }
