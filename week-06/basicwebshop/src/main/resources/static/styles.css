@@ -1,0 +1,24 @@
+body {
+    font-family: Arial;
+}
+
+header h1 {
+    color: aqua;
+}
+
+header hr {
+    color: aqua;
+}
+
+table th {
+    background-color: aqua;
+    text-align: center;
+    height: 80px;
+    padding: 20px;
+
+}
+
+table td {
+    height: 80px;
+}
+
