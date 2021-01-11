@@ -1,24 +1,95 @@
 body {
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    width: 66%;
 }
 
 header h1 {
-    color: aqua;
+    color: #0C2059;
+    font-size: 72px;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.searchbar {
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #3C4973;
+    color: #F2F2F2;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-button {
+    padding: unset;
 }
 
 header hr {
     color: aqua;
 }
 
+.top-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    font-weight: 300;
+}
+
+.item-name {
+
+}
+
+.item-description {
+
+}
+
+.item-price {
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.item-quantity {
+    text-align: center;
+    font-weight: 300;
+    font-style: italic;
+}
+
 table th {
-    background-color: aqua;
+    background-color: #D9D2CC;
     text-align: center;
     height: 80px;
     padding: 20px;
-
+    font-size: 20px;
+    font-weight: 400;
 }
 
 table td {
     height: 80px;
+}
+
+.footer-line {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 

@@ -16,11 +16,11 @@ public class ShopItemController {
     List<ShopItem> shopItems = new ArrayList<>();
 
     public ShopItemController() {
-        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5));
-        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2));
-        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0));
-        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce", 119.0, 100));
-        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on a bike", 300.0, 1));
+        shopItems.add(new ShopItem("Running shoes", "Nike running shoes for every day sport", 1000.0, 5, "Clothes and Shoes"));
+        shopItems.add(new ShopItem("Printer", "Some HP printer that will print pages", 3000.0, 2, "Electronics"));
+        shopItems.add(new ShopItem("Coca cola", "0.5l standard coke", 25.0, 0, "Beverages and Snacks"));
+        shopItems.add(new ShopItem("Wokin", "Chicken with fried rice and WOKIN sauce", 119.0, 100, "Beverages and Snacks"));
+        shopItems.add(new ShopItem("T-shirt", "Blue with a corgi on a bike", 300.0, 1, "Clothes and Shoes"));
     }
 
     @GetMapping("/webshop")
@@ -114,6 +114,36 @@ public class ShopItemController {
     private List<ShopItem> searchItems(String input) {
         return shopItems.stream()
                 .filter(item -> item.getName().toLowerCase().contains(input) || item.getDescription().toLowerCase().contains(input))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/more-filters")
+    public String moreFilters(Model model) {
+        model.addAttribute("shopItems", shopItems);
+        return "more-filters";
+    }
+
+    @GetMapping("/clothes-and-shoes")
+    public String getClothesAndShoes(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Clothes and Shoes"));
+        return "more-filters";
+    }
+
+    @GetMapping("/electronics")
+    public String getElectronics(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Electronics"));
+        return "more-filters";
+    }
+
+    @GetMapping("/beverages-and-snacks")
+    public String getBeveragesAndSnacks(Model model) {
+        model.addAttribute("shopItems", getFilteredByType("Beverages and Snacks"));
+        return "more-filters";
+    }
+
+    private List<ShopItem> getFilteredByType(String type) {
+        return shopItems.stream()
+                .filter(item -> item.getType().equals(type))
                 .collect(Collectors.toList());
     }
 

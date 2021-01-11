@@ -6,12 +6,28 @@ public class ShopItem {
     String description;
     Double price;
     Integer quantityOfStock;
+    String type;
+    String currency;
 
-    public ShopItem(String name, String description, Double price, Integer quantityOfStock) {
+    public ShopItem(String name, String description, Double price, Integer quantityOfStock, String type) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantityOfStock = quantityOfStock;
+        this.type = type;
+        this.currency = "HUF";
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getFormattedPrice() {
+        return this.getPrice().toString() + " " + this.getCurrency();
     }
 
     public String getName() {
@@ -44,5 +60,13 @@ public class ShopItem {
 
     public void setQuantityOfStock(Integer quantityOfStock) {
         this.quantityOfStock = quantityOfStock;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
