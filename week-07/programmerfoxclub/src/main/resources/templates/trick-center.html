@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmer Fox Club - Nutrition Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main-container">
+    <header class="top-nav">
+        <img class="logo" src="img/greenfox.png"/>
+        <div class="nav-buttons">
+            <a th:href="'/?name=' + ${name}"><button class="nav-button">INFORMATION</button></a>
+            <a th:href="'/nutrition-store?name=' + ${name}"><button class="nav-button">NUTRITION STORE</button></a>
+            <a th:href="'/trick-center?name=' + ${name}"><button class="nav-button">TRICK CENTER</button></a>
+            <button class="nav-button">ACTION HISTORY</button>
+        </div>
+    </header>
+    <hr class="header-over">
+    <div class="content-container">
+        <form th:action="'/trick-center?name=' + ${name}" method="post">
+            <label for="trick">Trick</label>
+            <select id="trick" name="trick">
+                <option th:each="trickopt : ${T(com.greenfoxacademy.programmerfoxclub.model.Trick).values()}" th:value="${trickopt.displayValue}" th:text="${trickopt.displayValue}"></option>
+            </select>
+            <button class="submit-button" type="submit">Learn</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
