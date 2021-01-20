@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+</head>
+<body>
+    <a href="/add">Add Todo</a>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Urgent</th>
+            <th>Done</th>
+        </tr>
+        <tr th:each="todo : ${todoList}">
+            <td th:text="${todo.id}">
+            <td th:text="${todo.title}">
+            <td th:text="${todo.urgent}">
+            <td th:text="${todo.done}">
+            <td><a th:href="'/' + ${todo.id} + '/delete'">Delete</a></td>
+            <td><a th:href="'/' + ${todo.id} + '/update'">Update</a></td>
+        </tr>
+    </table>
+</body>
+</html>
