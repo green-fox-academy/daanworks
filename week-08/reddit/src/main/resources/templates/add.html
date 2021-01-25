@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reddit Clone - Add Post</title>
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <h1>
+                    ADD POST
+                </h1>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <small><p th:text="'Logged in as: ' + ${currentUser.getUserName()}"></p></small>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+        <form th:action="'/add?userName=' + ${currentUser.getUserName()}" method="post">
+            <div class="row mt-3 d-flex align-items-end">
+                <div class="col-5">
+                    <label for="posttitle" class="form-label">Title:</label>
+                    <input type="text" class="form-control" id="posttitle" name="postTitle" placeholder="Enter the title">
+                </div>
+                <div class="col-5">
+                    <label for="link" class="form-label">Link:</label>
+                    <input type="text" class="form-control" id="link" name="link" placeholder="Copy the link" value="https://">
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                </div>
+                <div class="col-1">
+                    <a href="/" class="text-decoration-none">
+                        <button type="button" class="btn btn-danger">BACK</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>
